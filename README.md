@@ -1,2 +1,2 @@
-# electric_bike
-Electric bike project-2025.10
+# Electric_vehicle
+Electric_vehicle project-2025.10
