@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "project_config.h": "c",
+        "project_mcu.h": "c",
+        "mathlib_typedefs.h": "c",
+        "mathlib_defines.h": "c",
+        "string.h": "c",
+        "pubdata_md_ma.h": "c",
+        "mc_parameter_m0.h": "c",
+        "mc_type.h": "c",
+        "pubdata_driverinstance.h": "c",
+        "limits": "c",
+        "ma_static_variable.h": "c",
+        "mc_math.h": "c",
+        "pid_regulators.h": "c",
+        "time_process.h": "c",
+        "state_machine.h": "c",
+        "hardware_config.h": "c",
+        "lks32mc07x_mcpwm.h": "c",
+        "mc_configure_fb_data.h": "c",
+        "hardware_init.h": "c",
+        "global_variable.h": "c",
+        "foc_drive.h": "c"
+    }
+}
