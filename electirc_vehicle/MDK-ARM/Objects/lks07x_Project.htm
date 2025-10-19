@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\lks07x_Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\lks07x_Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Oct 08 01:33:45 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Oct 19 22:26:40 2025
 <BR><P>
 <H3>Maximum Stack Usage =         48 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -143,10 +143,10 @@ Global Symbols
 
 <P><STRONG><a name="[37]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[14]"></a>ADC0_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, interrupt.o(i.ADC0_IRQHandler))
+<P><STRONG><a name="[14]"></a>ADC0_IRQHandler</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, interrupt.o(i.ADC0_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
-<P><STRONG><a name="[15]"></a>ADC1_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, interrupt.o(i.ADC1_IRQHandler))
+<P><STRONG><a name="[15]"></a>ADC1_IRQHandler</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, interrupt.o(i.ADC1_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
 <P><STRONG><a name="[1e]"></a>CL0_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.CL0_IRQHandler))
@@ -155,8 +155,8 @@ Global Symbols
 <P><STRONG><a name="[13]"></a>CMP_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.CMP_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
-<P><STRONG><a name="[27]"></a>Clock_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, hardware_init.o(i.Clock_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Clock_Init &rArr; SoftDelay
+<P><STRONG><a name="[27]"></a>Clock_Init</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, hardware_init.o(i.Clock_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = Clock_Init &rArr; SoftDelay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SoftDelay
 </UL>
@@ -166,7 +166,7 @@ Global Symbols
 <P><STRONG><a name="[12]"></a>DSP0_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.DSP0_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
-<P><STRONG><a name="[29]"></a>GPIO_Init</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, lks32mc07x_gpio.o(i.GPIO_Init))
+<P><STRONG><a name="[29]"></a>GPIO_Init</STRONG> (Thumb, 162 bytes, Stack size 16 bytes, lks32mc07x_gpio.o(i.GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SYS_ModuleClockCmd
@@ -215,7 +215,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Hardware_init
 </UL>
 
-<P><STRONG><a name="[16]"></a>MCPWM0_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, interrupt.o(i.MCPWM0_IRQHandler))
+<P><STRONG><a name="[16]"></a>MCPWM0_IRQHandler</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, interrupt.o(i.MCPWM0_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
 <P><STRONG><a name="[1d]"></a>PWRDN_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.PWRDN_IRQHandler))
@@ -230,11 +230,11 @@ Global Symbols
 <P><STRONG><a name="[1c]"></a>SW_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.SW_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
-<P><STRONG><a name="[2a]"></a>SYS_ModuleClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, lks32mc07x_sys.o(i.SYS_ModuleClockCmd))
+<P><STRONG><a name="[2a]"></a>SYS_ModuleClockCmd</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, lks32mc07x_sys.o(i.SYS_ModuleClockCmd))
 <BR><BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 
-<P><STRONG><a name="[28]"></a>SoftDelay</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, hardware_init.o(i.SoftDelay))
+<P><STRONG><a name="[28]"></a>SoftDelay</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, hardware_init.o(i.SoftDelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SoftDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Hardware_init
@@ -246,13 +246,13 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
 <P><STRONG><a name="[20]"></a>SystemInit</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, hardware_init.o(i.SystemInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SystemInit &rArr; Clock_Init &rArr; SoftDelay
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SystemInit &rArr; Clock_Init &rArr; SoftDelay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clock_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(.text)
 </UL>
-<P><STRONG><a name="[6]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, interrupt.o(i.TIMER0_IRQHandler))
+<P><STRONG><a name="[6]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, interrupt.o(i.TIMER0_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
 <P><STRONG><a name="[7]"></a>TIMER1_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.TIMER1_IRQHandler))
@@ -267,7 +267,7 @@ Global Symbols
 <P><STRONG><a name="[10]"></a>UART0_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.UART0_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
-<P><STRONG><a name="[11]"></a>UART1_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, interrupt.o(i.UART1_IRQHandler))
+<P><STRONG><a name="[11]"></a>UART1_IRQHandler</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, interrupt.o(i.UART1_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lks32mc07x.o(RESET)
 </UL>
 <P><STRONG><a name="[1b]"></a>WAKE_IRQHandler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, interrupt.o(i.WAKE_IRQHandler))
@@ -279,7 +279,7 @@ Global Symbols
 
 <P><STRONG><a name="[3a]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[1f]"></a>main</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[1f]"></a>main</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = main &rArr; Hardware_init &rArr; GPIO_init &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
