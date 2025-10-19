@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "limits": "c",
+        "stdio.h": "c",
+        "stddef.h": "c",
+        "platform.h": "c",
+        "gpio_led_toggle.h": "c",
+        "mm32f5330_it.h": "c"
+    }
+}

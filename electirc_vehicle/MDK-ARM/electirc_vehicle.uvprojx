@@ -14,16 +14,16 @@
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>MM32F5333D4QV</Device>
+          <Device>MM32F5333D7PV</Device>
           <Vendor>MindMotion</Vendor>
           <PackID>MindMotion.MM32F5330_DFP.0.5.1</PackID>
           <PackURL>http://www.mindmotion.com.cn/Download/MDK_KEIL/</PackURL>
           <Cpu>IRAM(0x20000000,0x8000) IROM(0x08000000,0x20000) CPUTYPE("Star-MC1") FPU3(SFPU) DSP CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2V8M(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32F5330_128 -FS08000000 -FL020000 -FP0($$Device:MM32F5333D4QV$Flash\MM32F5330_128.FLM))</FlashDriverDll>
+          <FlashDriverDll>UL2V8M(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0MM32F5330_128 -FS08000000 -FL020000 -FP0($$Device:MM32F5333D7PV$Flash\MM32F5330_128.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:MM32F5333D4QV$Device\MM32F5333D\hal_device_registers.h</RegisterFile>
+          <RegisterFile>$$Device:MM32F5333D7PV$Device\MM32F5333D\hal_device_registers.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:MM32F5333D4QV$SVD\MM32F5330.svd</SFDFile>
+          <SFDFile>$$Device:MM32F5333D7PV$SVD\MM32F5330.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
