@@ -1,6 +1,8 @@
 # Electric_vehicle
 Electric vehicle project-2025.10
 
+芯片：LKS32MC071CBT8
+
 # 一、FOC底层算法(lks)
     1.参考系
         (1)右手系beta轴向下为正
