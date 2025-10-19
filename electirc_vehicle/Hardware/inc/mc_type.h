@@ -8,4 +8,12 @@
 
 #include "global_variable.h"
 
+/* ---------------------------- hardware parameter ----------------------- */
+#define CURRENT_SAMPLE_1SHUNT 1 /* 单电阻 */
+#define CURRENT_SAMPLE_2SHUNT 2 /* 双电阻 */
+#define CURRENT_SAMPLE_3SHUNT 3 /* 三电阻 */
+
+#define EPWM0_CURRENT_SAMPLE_TYPE (CURRENT_SAMPLE_3SHUNT)
+
 #endif
+
