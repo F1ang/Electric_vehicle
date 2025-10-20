@@ -1,5 +1,6 @@
 #include "global_variable.h"
 #include "segger_rtt.h"
+#include "task_scheduler.h"
 
 #if (RTT_FUNCTION == FUNCTION_ON)
 struct {
@@ -11,13 +12,12 @@ struct {
 #endif
 
 /**
- * @brief ADC0 interrupt handler
+ * @brief ADC0 interrupt handler for FOC
  * @retval None
  */
 void ADC0_IRQHandler(void)
 {
     ADC0_IF |= BIT1 | BIT0;
-
 }
 
 /**
@@ -72,6 +72,10 @@ void TIMER0_IRQHandler(void)
 {
     /* Ê±»ù500us */
     UTIMER0_IF |= TIMER_IF_ZERO;
+
+    gS_TaskScheduler.bTimeCnt1ms++;
+    gS_TaskScheduler.nTimeCnt10ms++;
+    gS_TaskScheduler.nTimeCnt500ms++;
 }
 
 /**
@@ -198,4 +202,3 @@ void PWRDN_IRQHandler(void)
 void CL0_IRQHandler(void)
 {
 }
-

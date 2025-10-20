@@ -21,6 +21,13 @@
         "hardware_init.h": "c",
         "global_variable.h": "c",
         "foc_drive.h": "c",
-        "lks32mc07x_sys.h": "c"
+        "lks32mc07x_sys.h": "c",
+        "main.h": "c",
+        "lks32mc07x_dsp.h": "c",
+        "lks32mc07x_adc.h": "c",
+        "lks32mc07x_lib.h": "c",
+        "lks32mc07x_dac.h": "c",
+        "lks32mc07x_tmp.h": "c",
+        "task_scheduler.h": "c"
     }
 }

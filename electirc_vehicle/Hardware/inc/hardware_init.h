@@ -53,8 +53,8 @@
 #define ADC1_CHANNEL_OPA2 ADC_CHANNEL_2
 #define ADC1_CHANNEL_OPA3 ADC_CHANNEL_3
 
-#define ADC0_CURRETN_A_CHANNEL (ADC0_CHANNEL_OPA2)
-#define ADC0_CURRETN_B_CHANNEL (ADC0_CHANNEL_OPA1)
+#define ADC0_CURRETN_A_CHANNEL (ADC0_CHANNEL_OPA1)
+#define ADC0_CURRETN_B_CHANNEL (ADC0_CHANNEL_OPA2)
 #define ADC0_CURRETN_C_CHANNEL (ADC0_CHANNEL_OPA0)
 
 #define ADC_BUS_VOL_CHANNEL (ADC_CHANNEL_8)     /* 母线电压ADC采样通道 */
@@ -77,5 +77,11 @@ void UART_init(void);
 void ADC_3Shunt_NormalModeCFG(void);
 void ADC0_init(void);
 void ADC1_init(void);
+void MCPWM_ch012_init(void);
+void UTimer_init(void);
+void DAC_init(void);
+void PGA_init(void);
+void CMP_init(void);
+void HALL_init(void);
 
 #endif
