@@ -4,6 +4,7 @@
 int main(void)
 {
     Hardware_init();
+
     for (;;) {
     }
 }

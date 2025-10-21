@@ -64,6 +64,13 @@ void GPIO_init(void)
     GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
     GPIO_InitStruct.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9;
     GPIO_Init(GPIO1, &GPIO_InitStruct);
+
+#if TEST_XH_CTRL_OUT_ENABLE
+    // 巡航
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
+    GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2;
+    GPIO_Init(GPIO2, &GPIO_InitStruct);
+#endif
 }
 
 /**
@@ -393,9 +400,9 @@ void DAC_init(void)
     // 默认 epwm0 ----- dac0
     // 双电机添加配置功能
     // pParaPtr = getCfgParaPtr(0);
-    wDACCmp = (s32)3000;
+    wDACCmp = (s32)700;
 
-    DAC_InitStre.DAC_GAIN = DAC_RANGE_4V85; /*DAC输出量程为4.85V*/
+    DAC_InitStre.DAC_GAIN = DAC_RANGE_1V2;  /*DAC输出量程为1.2V*/
     DAC_InitStre.DACOUT_EN = DISABLE;       /*使能DAC输出*/
     DAC_InitStre.TIG_CH_EN = DISABLE;       /*是否使能UTIMER触发步进*/
     DAC_InitStre.DAC_STEP = 0;              /*步进值为0*/
@@ -407,6 +414,7 @@ void DAC_init(void)
         nDACRef = 4850;
     }
 
+    // 1.2V*700/1200*4096/0.05R=14A
     wDACCmp = (wDACCmp * 4096) / nDACRef;
     wDACCmp = sat(wDACCmp, 0, 4095);
 

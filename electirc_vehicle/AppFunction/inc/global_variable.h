@@ -9,6 +9,8 @@
 #include "main.h"
 #include "mc_type.h"
 
+#define TEST_XH_CTRL_OUT_ENABLE 1 /* ≤®–Œ—È÷§≈‰÷√ */
+
 #define FUNCTION_ON  1
 #define FUNCTION_OFF 0
 

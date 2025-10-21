@@ -18,6 +18,12 @@ struct {
 void ADC0_IRQHandler(void)
 {
     ADC0_IF |= BIT1 | BIT0;
+
+#if TEST_XH_CTRL_OUT_ENABLE
+    // —≤∫Ω≤‚ ‘
+    // GPIO_SetBits(GPIO2, GPIO_Pin_2);
+    // GPIO_ResetBits(GPIO2, GPIO_Pin_2);
+#endif
 }
 
 /**
