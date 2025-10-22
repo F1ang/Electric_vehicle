@@ -53,6 +53,15 @@ void GPIO_init(void)
     GPIO_InitTypeDef GPIO_InitStruct;
     GPIO_StructInit(&GPIO_InitStruct);
 
+    // HALL0
+    GPIO_PinAFConfig(GPIO0, GPIO_PinSource_11, AF2_HALL);
+    GPIO_PinAFConfig(GPIO0, GPIO_PinSource_12, AF2_HALL);
+    GPIO_PinAFConfig(GPIO0, GPIO_PinSource_13, AF2_HALL);
+
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
+    GPIO_InitStruct.GPIO_Pin = GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13;
+    GPIO_Init(GPIO0, &GPIO_InitStruct);
+
     // MCPWM0
     GPIO_PinAFConfig(GPIO1, GPIO_PinSource_4, AF3_MCPWM);
     GPIO_PinAFConfig(GPIO1, GPIO_PinSource_5, AF3_MCPWM);

@@ -1,6 +1,7 @@
 #include "global_variable.h"
 #include "segger_rtt.h"
 #include "task_scheduler.h"
+#include "mc_hall.h"
 
 #if (RTT_FUNCTION == FUNCTION_ON)
 struct {
@@ -18,6 +19,8 @@ struct {
 void ADC0_IRQHandler(void)
 {
     ADC0_IF |= BIT1 | BIT0;
+
+    gS_TaskScheduler.bPWM_UpdateFlg = 1;
 
 #if TEST_XH_CTRL_OUT_ENABLE
     // Ñ²º½²âÊÔ
@@ -52,6 +55,7 @@ void MCPWM0_IRQHandler(void)
  */
 void HALL_IRQHandler(void)
 {
+    
 }
 
 /**
@@ -60,6 +64,7 @@ void HALL_IRQHandler(void)
  */
 void HALL0_IRQHandler(void)
 {
+	HALL_IRQProcess(&g_hall_ctrl);
 }
 
 /**
@@ -79,9 +84,7 @@ void TIMER0_IRQHandler(void)
     /* Ê±»ù500us */
     UTIMER0_IF |= TIMER_IF_ZERO;
 
-    gS_TaskScheduler.bTimeCnt1ms++;
-    gS_TaskScheduler.nTimeCnt10ms++;
-    gS_TaskScheduler.nTimeCnt500ms++;
+    gS_TaskScheduler.nTimeBaseFlg = 1;
 }
 
 /**
