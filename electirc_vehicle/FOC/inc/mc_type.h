@@ -74,4 +74,40 @@ typedef enum {
     WAIT = 4, /* 等待状态 */
 } SystStatus_m;
 
+/* PID算法参数结构体 */
+typedef struct
+{
+    s16 hKp_Gain;
+    u16 hKp_Divisor;
+    s16 hKi_Gain;
+    u16 hKi_Divisor;
+    s16 hLower_Limit_Output;   // Lower Limit for Output limitation
+    s16 hUpper_Limit_Output;   // Lower Limit for Output limitation
+    s32 wLower_Limit_Integral; // Lower Limit for Integral term limitation
+    s32 wUpper_Limit_Integral; // Lower Limit for Integral term limitation
+    s32 wIntegral;
+} PI_Ctrl_t;
+
+typedef struct
+{
+    volatile u16 nSys_TimerPWM; /* PWM周期计数Cnt */
+
+    s16 nBusVoltage;       /* 直流母线电压 */
+    s16 nBusVoltagefir;    /* 直流母线电压滤波值 */
+    s16 nBusCurrentadc;    /* 直流母线电流采样值 */
+    s16 nBusCurrentadcfir; /* 直流母线电流滤波值 */
+
+    int16_t nSampCurDat0; // 电流采样值0
+    int16_t nSampCurDat1; // 电流采样值1
+
+    s16 nPhaseAOffset; /* A相ADC采样 Offset值 */
+    s16 nPhaseBOffset; /* B相ADC采样 Offset值 */
+    s16 nPhaseCOffset; /* C相ADC采样 Offset值 */
+
+    volatile s16 nDCur_Reference; /* D轴电流给定 */
+    volatile s16 nRequestPower;   /* Q轴电压给定 */
+    PI_Ctrl_t struPI_Torque;      /* Q轴电流环PI参数 */
+    PI_Ctrl_t struPI_Flux;        /* D轴电流环PI参数 */
+} FOC_Ctrl_t;
+
 #endif

@@ -6,4 +6,6 @@
 #ifndef __PI_REGULATORS__H
 #define __PI_REGULATORS__H
 
+#include "global_variable.h"
+
 #endif

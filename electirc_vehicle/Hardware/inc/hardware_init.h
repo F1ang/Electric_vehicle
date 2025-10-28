@@ -67,6 +67,18 @@
 #define BEMF_CH_B ADC_CHANNEL_11 /* B相反电势检测ADC通道号 */
 #define BEMF_CH_C ADC_CHANNEL_5  /* C相反电势检测ADC通道号 */
 
+/* ---------------------------- ADC数据采集配置 ----------------------- */
+#define GET_ADC0_DATA_M0 (ADC0_DAT0)
+#define GET_ADC1_DATA_M0 (ADC0_DAT1)
+
+/* 母线电压ADC通道采样结果宏定义 */
+#define GET_M0_BUS_VOL_ADC_RESULT (ADC0_DAT4)
+
+#define GET_M0_TEMP_DATA_A (ADC0_DAT6)
+#define GET_M0_BEMF_DATA_A (ADC0_DAT8)
+#define GET_M0_BEMF_DATA_B (ADC0_DAT9)
+#define GET_M0_BEMF_DATA_C (ADC0_DAT10)
+
 void SystemInit(void);
 void SoftDelay(u32 cnt);
 void Clock_Init(void);

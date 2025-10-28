@@ -6,6 +6,11 @@ int main(void)
 {
     Hardware_init();
 
+    foc_ctrl.nSys_TimerPWM = 0;
+    while (foc_ctrl.nSys_TimerPWM < 1500) {
+        ;
+    }
+
     for (;;) {
         Task_Scheduler();
     }

@@ -2,6 +2,7 @@
 #include "segger_rtt.h"
 #include "task_scheduler.h"
 #include "mc_hall.h"
+#include "hardware_init.h"
 
 #if (RTT_FUNCTION == FUNCTION_ON)
 struct {
@@ -20,7 +21,12 @@ void ADC0_IRQHandler(void)
 {
     ADC0_IF |= BIT1 | BIT0;
 
+    foc_ctrl.nSys_TimerPWM++;
     gS_TaskScheduler.bPWM_UpdateFlg = 1;
+    foc_ctrl.nBusVoltage = GET_M0_BUS_VOL_ADC_RESULT; /* 直流母线电压 */
+
+    foc_ctrl.nSampCurDat0 = GET_ADC0_DATA_M0; /* 两相采样值 */
+    foc_ctrl.nSampCurDat1 = GET_ADC1_DATA_M0;
 
 #if TEST_XH_CTRL_OUT_ENABLE
     // 巡航测试
@@ -55,7 +61,6 @@ void MCPWM0_IRQHandler(void)
  */
 void HALL_IRQHandler(void)
 {
-    
 }
 
 /**
@@ -64,7 +69,7 @@ void HALL_IRQHandler(void)
  */
 void HALL0_IRQHandler(void)
 {
-	HALL_IRQProcess(&g_hall_ctrl);
+    HALL_IRQProcess(&g_hall_ctrl);
 }
 
 /**

@@ -20,5 +20,6 @@
 #define MAX_DRV_MODULE_USED      (PLANTFORM_DRV_MODULE_NUM)
 
 extern u16 g_hDriverPolarity[MAX_DRV_MODULE_USED];
+extern FOC_Ctrl_t foc_ctrl;
 
 #endif
