@@ -170,3 +170,58 @@ void ramp32GenCalc(PSTR_RampGen32 this)
     }
 }
 
+/**
+ * @brief clarke变换
+ * @note 建系beta向下为正
+ * @param Iabc_Input 电流Ia Ib Ic
+ * @retval CurrVoctor_Iabc
+ */
+CurrVoctor_Ialphabeta Clarke(CurrVoctor_Iabc Iabc_Input) 
+{
+    CurrVoctor_Ialphabeta Curr_Output = { 0, 0 };
+
+    s16 qIa_divSQRT3;
+    s16 qIb_divSQRT3;
+
+    // qIalpha = qIas
+    Curr_Output.qIalpha = Iabc_Input.qIa;
+
+    qIa_divSQRT3 = (s32)DIVSQRT3 * Iabc_Input.qIa >> 15;
+    qIb_divSQRT3 = (s32)DIVSQRT3 * Iabc_Input.qIb >> 15;
+
+    // qIbeta = -(2*qIbs+qIas)/sqrt(3)
+    Curr_Output.qIbeta = (-(qIa_divSQRT3) - (qIb_divSQRT3) - (qIb_divSQRT3));
+
+    return Curr_Output;
+}
+
+/**
+ * @brief park
+ * @note q超前d,θ定义为q与alpha的夹角
+ * @param Iaplha_beta_Input Iaplha_beta
+ * @param Theta 角度
+ * @param *this FOC控制参数结构体
+ * @retval CurrVoctor_Idq
+ */
+CurrVoctor_Idq Park(CurrVoctor_Ialphabeta Iaplha_beta_Input, s16 Theta, TrigValue_Ctrl_t *this)
+{
+    CurrVoctor_Idq Curr_Output = { 0, 0 };
+
+    s16 qId_1, qId_2;
+    s16 qIq_1, qIq_2;
+
+    Trig_Functions(Theta, this);
+
+    qIq_1 = (s32)Iaplha_beta_Input.qIalpha * this->hCos >> 15;
+    qIq_2 = (s32)Iaplha_beta_Input.qIbeta * this->hSin >> 15;
+    // Iq=Ialpha*cos(Theta)-Ibeta*sin(Theta)
+    Curr_Output.qIq = ((qIq_2) - (qIq_1));
+
+    qId_1 = (s32)Iaplha_beta_Input.qIalpha * this->hSin >> 15;
+    qId_2 = (s32)Iaplha_beta_Input.qIbeta * this->hCos >> 15;
+
+    // Id=Ialpha*sin(Theta)+Ibeta*cos(Theta)
+    Curr_Output.qId = ((qId_1) + (qId_2));
+
+    return (Curr_Output);
+}

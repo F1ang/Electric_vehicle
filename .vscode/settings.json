@@ -31,6 +31,8 @@
         "task_scheduler.h": "c",
         "lks32mc07x_flash.h": "c",
         "lks32mc07x_hall.h": "c",
-        "mc_hall.h": "c"
+        "mc_hall.h": "c",
+        "segger_rtt.h": "c",
+        "system_init.h": "c"
     }
 }

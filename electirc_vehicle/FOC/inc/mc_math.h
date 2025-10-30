@@ -145,13 +145,6 @@
     8192, 8212, 8233, 8253, 8273, 8293, 8313, 8333, 8352, 8372, 8392, 8411, 8431, 8450, 8470, 8489  \
 }
 
-/* 正弦函数 */
-typedef struct
-{
-    s16 hCos;
-    s16 hSin;
-} TrigValue_Ctrl_t;
-
 /* 斜坡运算 */
 typedef struct
 {
@@ -162,11 +155,57 @@ typedef struct
     s32 wRampOut;
 } STR_RampGen32, *PSTR_RampGen32;
 
+/* 电流Ia Ib Ic */
+typedef struct
+{
+    s16 qIa;
+    s16 qIb;
+    s16 qIc;
+} CurrVoctor_Iabc;
+
+/* 电流Ialpha Ibeta */
+typedef struct
+{
+    s16 qIalpha;
+    s16 qIbeta;
+} CurrVoctor_Ialphabeta;
+
+/* 电流Id Iq */
+typedef struct
+{
+    s16 qId;
+    s16 qIq;
+} CurrVoctor_Idq;
+
+/* 电压Ud Uq */
+typedef struct
+{
+    s16 qVd;
+    s16 qVq;
+} VoltVoctor_Udq;
+
+/* 电压Ualpha Ubeta */
+typedef struct
+{
+    s16 qValpha;
+    s16 qVbeta;
+} VoltVoctor_Ualphabeta;
+
+/* CCR */
+typedef struct
+{
+    s16 u_ccr1;
+    s16 v_ccr2;
+    s16 w_ccr3;
+} VoltPhaseUVW_PWM;
+
 void Trig_Functions(s16 hAngle, TrigValue_Ctrl_t *t_pTrigComponents);
 s16 Sqrt_Functions(s16 x, s16 y);
 s16 Div_Functions(s32 y, s16 x);
 void CopyFromBuffer(u8 *nDestAddr, u8 *pSrcBuff, u16 nSize);
 void ramp32GenInit(PSTR_RampGen32 this);
 void ramp32GenCalc(PSTR_RampGen32 this);
+CurrVoctor_Ialphabeta Clarke(CurrVoctor_Iabc Iabc_Input);
+CurrVoctor_Idq Park(CurrVoctor_Ialphabeta Iaplha_beta_Input, s16 Theta, TrigValue_Ctrl_t *this);
 
 #endif

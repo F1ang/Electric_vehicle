@@ -45,6 +45,13 @@ typedef enum {
     WAIT = 4, /* 等待状态 */
 } SystStatus_m;
 
+/* 正弦函数 */
+typedef struct
+{
+    s16 hCos;
+    s16 hSin;
+} TrigValue_Ctrl_t;
+
 /* PID算法参数结构体 */
 typedef struct
 {
@@ -80,6 +87,8 @@ typedef struct
     volatile s16 nRequestPower;   /* Q轴电压给定 */
     PI_Ctrl_t struPI_Torque;      /* Q轴电流环PI参数 */
     PI_Ctrl_t struPI_Flux;        /* D轴电流环PI参数 */
+
+    volatile TrigValue_Ctrl_t struTrigSinCos; /* 三角函数值 */
 } FOC_Ctrl_t;
 
 #endif
