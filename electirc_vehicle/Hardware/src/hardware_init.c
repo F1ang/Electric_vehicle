@@ -1,5 +1,6 @@
 #include "hardware_init.h"
 #include "mc_type.h"
+#include "mc_math.h"
 
 /**
  * @brief œµÕ≥ ±÷”

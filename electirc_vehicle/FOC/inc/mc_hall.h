@@ -1,7 +1,7 @@
 /******************************************************************************
  *@brief  hall sensor motor control
  *@author By Spotted Owl
- *@date     2025.10.22
+ *@date     2025.11.01
  ******************************************************************************/
 #ifndef MC_HALL_H
 #define MC_HALL_H
@@ -74,12 +74,12 @@ typedef struct
     u8 bHallPossableTab2[8]; /* Hall换相表，存储上一相Hall值 */
     u8 bHallCommTab[8];      /* Hall换相表 */
     u8 HallConversion[8];    /* Hall映射表 */
-} HALL_Ctrl_t;
+} HALL_Handle_t;
 
-extern HALL_Ctrl_t g_hall_ctrl;
+extern HALL_Handle_t Hall_handle;
 
 u8 ReadHallState(void);
-void Update_HallState(HALL_Ctrl_t *this);
-void HALL_IRQProcess(HALL_Ctrl_t *this);
+void Update_HallState(HALL_Handle_t *this);
+void HALL_IRQProcess(HALL_Handle_t *this);
 
 #endif

@@ -1,10 +1,10 @@
 /******************************************************************************
- *@brief  bsp²ãÇý¶¯
+ *@brief  BSP²ãÇý¶¯
  *@author By Spotted Owl
- *@date     2025.10.07
+ *@date     2025.11.01
  ******************************************************************************/
-#ifndef __HARDWARE_INIT_H
-#define __HARDWARE_INIT_H
+#ifndef HARDWARE_INIT_H
+#define HARDWARE_INIT_H
 
 #include "global_variable.h"
 

@@ -33,6 +33,14 @@
         "lks32mc07x_hall.h": "c",
         "mc_hall.h": "c",
         "segger_rtt.h": "c",
-        "system_init.h": "c"
+        "system_init.h": "c",
+        "lks32mc07x_gpio.h": "c",
+        "stdint.h": "c",
+        "cmath": "c",
+        "type_traits": "c",
+        "lks32mc07x_cmp.h": "c",
+        "lks32mc07x_uart.h": "c",
+        "lks32mc07x_tim.h": "c",
+        "lks32mc07x_nvr.h": "c"
     }
 }

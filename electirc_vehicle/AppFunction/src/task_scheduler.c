@@ -24,7 +24,7 @@ void Task_Scheduler(void)
     } else {
         if (gS_TaskScheduler.bPWM_UpdateFlg) { /* 每个PWM周期更新一次 */
             gS_TaskScheduler.bPWM_UpdateFlg = 0;
-            Update_HallState(&g_hall_ctrl);
+            Update_HallState(&Hall_handle);
         }
     }
 }
