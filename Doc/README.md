@@ -1,5 +1,8 @@
 # Electric_vehicle
-Electric vehicle project-2025.10
+Electric vehicle project-2025.11
+
+# 软件组织结构
+![alt text](1.软件组织结构-1.png)
 
 芯片：LKS32MC071C8T8
 
